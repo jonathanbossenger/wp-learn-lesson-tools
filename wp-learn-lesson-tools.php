@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Check if the Sensei plugin is installed and active
  */
-if ( ! is_plugin_active( 'sensei/sensei.php' ) ) {
+if ( ! is_plugin_active( 'sensei-lms/sensei-lms.php' ) ) {
 	return;
 }
 
@@ -27,7 +27,7 @@ if ( ! is_plugin_active( 'wordpress-mcp/wordpress-mcp.php' ) ) {
 /**
  * Check if the WordPress Feature API plugin is installed and active
  */
-if ( ! is_plugin_active( 'wordpress-feature-api/wordpress-feature-api.php' ) ) {
+if ( ! is_plugin_active( 'wp-feature-api/wp-feature-api.php' ) ) {
 	return;
 }
 
