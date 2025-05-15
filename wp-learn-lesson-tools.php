@@ -35,7 +35,6 @@ if ( ! is_plugin_active( 'wp-feature-api/wp-feature-api.php' ) ) {
  * Action hooks to register the lesson features and tools
  */
 add_action( 'init', 'wp_learn_register_lesson_features' );
-add_action( 'init', 'wp_learn_register_lesson_tools' );
 
 /**
  * Register the lesson features.
@@ -51,27 +50,4 @@ function wp_learn_register_lesson_features() {
 		'categories'  => array( 'core', 'rest' ),
 		'type'        => WP_Feature::TYPE_RESOURCE, // This is a GET request
 	) );
-}
-
-/*
- * Register the lessons tools
- * These tools will be used to interact with lessons from the lessons features.
- */
-function wp_learn_register_lesson_tools() {
-	// Register the get_lessons tool
-	new Automattic\WordpressMcp\Core\RegisterMcpTool([
-		'name'        => 'get_lessons',
-		'description' => 'Get Sensei lessons from the lessons feature',
-		'type'        => 'read',
-		'inputSchema'          => array(
-			'type'       => 'object',
-			'properties' => new stdClass(),
-			'required'   => new stdClass(),
-		),
-		'callback'    => function() {
-			$feature = wp_find_feature( 'wp-learn/get-lessons' );
-			return $feature->call();
-		},
-		'permissions_callback' => '__return_true',
-	]);
 }
