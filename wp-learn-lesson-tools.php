@@ -11,27 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Check if the Sensei plugin is installed and active
- */
-if ( ! is_plugin_active( 'sensei-lms/sensei-lms.php' ) ) {
-	return;
-}
-
-/**
- * Check if the WordPress MCP plugin is installed and active
- */
-if ( ! is_plugin_active( 'wordpress-mcp/wordpress-mcp.php' ) ) {
-	return;
-}
-
-/**
- * Check if the WordPress Feature API plugin is installed and active
- */
-if ( ! is_plugin_active( 'wp-feature-api/wp-feature-api.php' ) ) {
-	return;
-}
-
-/**
  * Action hooks to register the lesson features and tools
  */
 add_action( 'init', 'wp_learn_register_lesson_features' );
