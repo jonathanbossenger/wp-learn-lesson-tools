@@ -3,11 +3,25 @@
  * Plugin Name: WP Learn Lesson Tools
  * Description: A plugin to manage lesson MCP tools for a WordPress site
  * Version: 0.0.1
- * Requires Plugins: wordpress-mcp, wp-feature-api, sensei-lms
+ * Requires Plugins: wp-feature-api, sensei-lms
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
+}
+
+/**
+ * Check if the Sensei plugin is installed and active
+ */
+if ( ! is_plugin_active( 'sensei-lms/sensei-lms.php' ) ) {
+	return;
+}
+
+/**
+ * Check if the WordPress Feature API plugin is installed and active
+ */
+if ( ! is_plugin_active( 'wp-feature-api/wp-feature-api.php' ) ) {
+	return;
 }
 
 /**
